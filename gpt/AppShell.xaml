@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CBSUrenRegistratie2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CBSUrenRegistratie2.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="CBSUrenRegistratie2">
+
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="login" />
+
+    <ShellContent
+        Title="Worker Dashboard"
+        ContentTemplate="{DataTemplate local:WorkerDashboardPage}"
+        Route="workerDashboard" />
+
+    <ShellContent
+        Title="Admin Dashboard"
+        ContentTemplate="{DataTemplate local:AdminDashboardPage}"
+        Route="adminDashboard" />
+    
+    <ShellContent
+        Title="User Management"
+        ContentTemplate="{DataTemplate local:UserManagementPage}"
+        Route="userManagement" />
+    
+    <ShellContent
+        Title="Project Management"
+        ContentTemplate="{DataTemplate local:ProjectManagementPage}"
+        Route="projectManagement" />
+
+    <ShellContent Title="Time Logging"
+              ContentTemplate="{DataTemplate local:TimeLoggingPage}"
+              Route="timeLogging" />
+
+</Shell>

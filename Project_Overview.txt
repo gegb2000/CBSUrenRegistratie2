@@ -1,0 +1,30 @@
+
+Project Overview Document - CBS Uren Registratie System
+------------------------------------------------------
+
+**Project Purpose:**
+The CBS Uren Registratie System is a comprehensive time management application designed to log hours, manage projects, and facilitate user authentication. It supports multiple user roles including administrators and workers, providing tailored functionalities to each group.
+
+**Key Functionalities:**
+1. **Time Logging:** Users can log time entries, specifying the hours worked on different projects on particular days. This is critical for tracking productivity and project progress.
+2. **User Authentication:** The system includes robust authentication mechanisms, ensuring that user access is secure and role-based.
+3. **Project Management:** Administrators have the ability to manage project details, oversee project statuses, and access comprehensive reports.
+4. **Role-Based Access:** The application provides different interfaces and functionalities based on user roles, such as admin and worker dashboards.
+
+**Architecture:**
+The application is built using the Microsoft .NET MAUI framework, which allows for cross-platform functionality across Windows, Android, and iOS devices. The project includes:
+- Models that define data structures.
+- Views that handle user interactions.
+- ViewModels that connect the views with the models, following the MVVM design pattern.
+- Services that handle business logic and database operations.
+
+**Key Components:**
+- **DatabaseService:** Manages all interactions with the SQLite database, handling CRUD operations for user and time log entries.
+- **AuthService:** Responsible for user authentication, ensuring secure login and session management.
+- **Views and ViewModels:** Each view paired with a ViewModel provides a specific functionality, from logging time to managing projects and user settings.
+
+**Usage Scenarios:**
+- A worker logs into the system, views their dashboard, and enters hours worked on a specific project.
+- An administrator logs in to access user management functionalities, adjust project parameters, and view reports on time logs and project progress.
+
+This document aims to provide a clear understanding of the CBS Uren Registratie System, detailing its purpose, architecture, and functional capabilities.

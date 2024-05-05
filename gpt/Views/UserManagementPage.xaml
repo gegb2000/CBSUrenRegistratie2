@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             x:Class="CBSUrenRegistratie2.Views.UserManagementPage"
+             Title="UserManagementPage">
+    <VerticalStackLayout Spacing="20" Padding="20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Label Text="Manage Users" FontAttributes="Bold"/>
+
+        <syncfusion:SfListView x:Name="usersList"
+                           HeightRequest="300"
+                           ItemsSource="{Binding Users}"
+                           SelectionMode="Single"
+                           IsStickyHeader="True"
+                           HeaderSize="45"
+                           IsStickyFooter="True"
+                           VerticalOptions="FillAndExpand"
+                           HorizontalOptions="FillAndExpand"
+                           FooterSize="45">
+            <syncfusion:SfListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid Background="#4CA1FE">
+                        <Label Text="Users List"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </syncfusion:SfListView.HeaderTemplate>
+            <syncfusion:SfListView.FooterTemplate>
+                <DataTemplate>
+                    <Grid Background="#4CA1FE">
+                        <Label Text="CBS | All rights reserved"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </syncfusion:SfListView.FooterTemplate>
+
+            <syncfusion:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" ColumnSpacing="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Username}"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Start"/>
+                        <Label Text="{Binding Role}"
+                   Grid.Column="1"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Start"
+                   FontAttributes="Italic" />
+                        <Button Grid.Column="2"
+                            Text="Delete"
+                            Command="{Binding Path=BindingContext.DeleteUserCommand, Source={x:Reference usersList}}"
+                            CommandParameter="{Binding UserId}"
+                            BackgroundColor="Red"
+                            TextColor="White"
+                            CornerRadius="5"/>
+                    </Grid>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView>
+
+        <Label Text="Add New User" FontAttributes="Bold"/>
+        <Entry x:Name="usernameEntry" Placeholder="Username"/>
+        <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True"/>
+        <Entry x:Name="roleIdEntry" Placeholder="Role ID (numeric)"/>
+        <Button Text="Add User" Clicked="OnAddUserClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
+             xmlns:local="clr-namespace:CBSUrenRegistratie2.Views"
+             x:Class="CBSUrenRegistratie2.Views.TimeLoggingPage"
+             x:Name="thisPage">
+    
+    <ScrollView Orientation="Vertical" HeightRequest="800">
+        <VerticalStackLayout>
+        <Picker Title="Select Month"
+                ItemsSource="{Binding Months}"
+                SelectedItem="{Binding SelectedMonth}"/>
+        
+            <CollectionView ItemsSource="{Binding DaysInMonth}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout Padding="30">
+                            <Label Text="{Binding DateWorked, StringFormat='{0:dd}'}" WidthRequest="30" Margin="0,0,10,0"/>
+                            <TimePicker Time="{Binding StartTime}" WidthRequest="100"/>
+                            <TimePicker Time="{Binding EndTime}" WidthRequest="100"/>
+                            <Button Text="+" 
+        Command="{Binding Source={x:Reference thisPage}, Path=BindingContext.AddBreakCommand}"  
+        CommandParameter="{Binding}"
+        WidthRequest="50"/>
+
+                            <CollectionView ItemsSource="{Binding Breaks}" ItemsLayout="HorizontalList">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <HorizontalStackLayout>
+                                            <TimePicker Time="{Binding StartBreakTime}" WidthRequest="100" PropertyChanged="TimePicker_OnPropertyChanged"/>
+                                            <TimePicker Time="{Binding EndBreakTime}" WidthRequest="100" PropertyChanged="TimePicker_OnPropertyChanged"/>
+                                            <Button Text="Remove" Command="{Binding Source={x:Reference thisPage}, Path=BindingContext.RemoveBreakCommand}" CommandParameter="{Binding}" WidthRequest="80"/>
+
+                                        </HorizontalStackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Actions -->
+        <Button Text="Save Month" Command="{Binding SaveMonthCommand}"/>
+        <Button Text="Submit Month" Command="{Binding SubmitMonthCommand}"/>
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:navigationdrawer="clr-namespace:Syncfusion.Maui.NavigationDrawer;assembly=Syncfusion.Maui.NavigationDrawer"
+             x:Class="CBSUrenRegistratie2.Views.AdminDashboardPage"
+             Title="Admin Dashboard">
+
+    <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer">
+        <!-- Main content area -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!-- Menu button to open the drawer -->
+            <Button Text="☰"
+                    BackgroundColor="#2196F3"
+                    FontSize="Large"
+                    Command="{Binding OpenDrawerCommand}"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"/>
+            <!-- Content shown in the main area -->
+            <StackLayout Grid.Row="1"
+                         BackgroundColor="White"
+                         Padding="20"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand">
+                <Label Text="Welcome to Admin Dashboard"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"
+                       FontAttributes="Bold"/>
+            </StackLayout>
+        </Grid>
+
+        <!-- Drawer Content - this is typically set using the DrawerContentView in Xamarin, using ListView for example -->
+        <StackLayout BackgroundColor="#EEEEEE">
+            <Button Text="User Management"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="userManagement"
+                    BackgroundColor="#2c3e50"
+                    TextColor="White"
+                    Margin="10"/>
+            <Button Text="Project Management"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="projectManagement"
+                    BackgroundColor="#2c3e50"
+                    TextColor="White"
+                    Margin="10"/>
+        </StackLayout>
+    </navigationdrawer:SfNavigationDrawer>
+</ContentPage>

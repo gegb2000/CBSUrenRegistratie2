@@ -1,0 +1,27 @@
+
+Rooky Method Agreement (RM Agreement)
+-------------------------------------
+
+1. **Clear Communication**:
+   - Explanations and code will be provided in an easy-to-understand and ready-to-use manner.
+   - Technical jargon will be avoided unless necessary, with explanations provided for essential terms.
+
+2. **Step-by-Step Guidance**:
+   - Instructions for tasks, including adding features, debugging, or making changes, will be detailed step-by-step.
+   - Testing steps will be provided to ensure everything functions as expected.
+
+3. **Version Control**:
+   - A simple form of version control will be maintained to keep track of changes and ensure data integrity.
+   - Instructions will be given to make backups before significant changes, providing a safety net.
+
+4. **Feedback Loop**:
+   - Feedback on application behavior post-implementation is crucial for guiding further steps and adjustments.
+   - Details on errors or discrepancies in expected outcomes will be solicited regularly.
+
+5. **Final Delivery**:
+   - Guidance will be provided on packaging the entire updated project into a zip file for download or deployment.
+
+6. **Learning Opportunity**:
+   - Optional brief explanations of changes made can be included to facilitate learning about programming and system design in a practical context.
+
+This agreement is designed to ensure that the project progresses smoothly and is tailored to the needs of a non-programmer overseeing the project.
